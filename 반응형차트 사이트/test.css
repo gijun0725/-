@@ -1,0 +1,241 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.box {
+  display: flex;
+  height: 800px;
+}
+
+/* ===MENU=== */
+/* ================================ */
+.menu {
+  background-color: #494CAD;
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  transform: translate(-80px);
+  transition: all 1s;
+  float: left;
+  text-align: right;
+  color: white;
+  z-index: 1;
+}
+
+.menu div {
+  display: flex;
+}
+
+.menu i {
+  padding: 20px 10px;
+  text-align: right;
+  transform: translate(85px);
+  transition: 1s;
+}
+
+.menu span {
+  padding: 20px 10px;
+  transform: translate(-150px);
+  transition: 1s;
+}
+
+.menu:hover {
+  transform: translate(0px);
+  transition: 1s;
+  z-index: 2;
+}
+
+.menu:hover i {
+  transform: translate(0px);
+  transition: 1s;
+}
+
+.menu:hover span {
+  transform: translate(0px);
+  transition: all 1s;
+}
+/* ================================== */
+
+/* ===DASHBOARD ===*/
+.dashboard {
+  float: left;
+  width: 100%;
+  position: absolute;
+  left: 60px;
+  /* margin-left: -80px; */
+}
+
+.dashbord-head {
+  justify-content: space-between;
+  display: flex;
+  border-bottom: 4px solid #cdcdcd6d;
+}
+
+/* 대시보드 검색 버튼 부분 */
+.search {
+  position: relative;
+  margin-left: 1px;
+  margin-top: 1px;
+  padding: 5px;
+}
+
+.search #search {
+  color: rgb(0, 0, 0);
+  float: left;
+  padding-left: 10px;
+  border-radius: 5px;
+  padding: 8px;
+  border: 2px solid #bdbdbd;
+  margin-left: 10px;
+  margin-top: 10px;
+  z-index: 5;
+}
+
+.search input {
+  width: 200px;
+  transition: width 1s;
+}
+
+.search input:focus {
+  animation-name: 커서;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  width: 300px; /* 포커스된 경우의 너비 설정 */
+}
+
+.search input:not(:focus) {
+  animation-name: 원상태로;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  width: 200px; /* 포커스 해제된 경우의 너비 설정 */
+}
+
+.search .icon {
+  position: absolute;
+  text-align: center;
+  background-color: #353A40;
+  right: 5px;
+  border-radius: 0px 5px 5px 0px;
+  padding: 8px;
+  color: white;
+  margin-left: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.icon i {
+  font-size: 15px;
+}
+
+.message {
+  color: #808080;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.message i,
+.message span {
+  padding: 10px;
+}
+/* =========================== */
+/* DashBoard 시작 */
+.dashboard-item {
+  background-color: #FAFAFA;
+  height: 100%;
+}
+
+.dashboard-item h1 {
+  font-size: 25px;
+  font-weight: 600;
+  padding: 20px;
+  margin: 0px;
+}
+/* card */
+.card {
+  margin: 0px 10px;
+  margin-bottom: 10px;
+}
+
+.card-body {
+  text-align: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+
+.detail {
+  text-align: left;
+}
+
+.card-body .icon {
+  text-align: center;
+  display: flex;
+  padding: 1vw;
+  align-items: center;
+  color: #808080;
+}
+
+.card-body .detail p {
+  font-size: 15px;
+  margin-bottom: 1vw;
+}
+
+.card-body .icon i {
+  font-size: 3vw;
+}
+
+.overview{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.chart{
+  width: 60%;
+  border: 2px solid #7a7a7a2a;
+  border-radius: 5px;
+  /* padding: 10px; */
+}
+.earnig-title{
+  border-bottom: 2px solid rgba(164, 164, 164, 0.398);
+  padding: 10px;
+  background-color: #ecececa5;
+}
+#myChart{
+  padding: 10px;
+}
+
+
+
+/* ======애니메이션====== */
+@keyframes 이동 {
+  0% {
+    transform: translate(0px);
+  }
+
+  100% {
+    transform: translate(-70px);
+  }
+}
+
+@keyframes 커서 {
+  0% {
+    width: 200px;
+  }
+  100% {
+    width: 300px;
+  }
+}
+
+@keyframes 원상태로 {
+  0% {
+    width: 300px;
+  }
+  100% {
+    width: 200px;
+  }
+}
+
+@media (max-width: 767px) {
+
+} 

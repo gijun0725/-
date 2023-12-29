@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/fontawesome/css/.css">
+  <link rel="stylesheet" href="./css/Logo.css">
+  <link rel="stylesheet" href="./test.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="box">
+    <nav class="menu">
+      <div>
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </div>
+      <div>
+        <i class="fas fa-headphones"></i>
+        <span>Service</span>
+      </div>
+      <div>
+        <i class="fas fa-flag"></i>
+        <span>Alerts</span>
+      </div>
+      <div>
+        <i class="fas fa-chart-pie"></i>
+        <span>Stats</span>
+      </div>
+    </nav>
+
+    <div class="dashboard">
+      <div class="dashbord-head">
+        <div class="search">
+          <input type="text" placeholder="Search" id="search">
+          <button type="submit" class="icon"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="message">
+          <i class="fas fa-bell"></i>
+          <i class="fas fa-envelope"></i>
+          <span>Minny park</span>
+        </div>
+      </div>
+
+      <div class="dashboard-item" style="background-color: rgba(233, 233, 233, 0.488);">
+        <h1>DashBoard</h1>
+        <div class="row" style="margin-bottom: 20px;">
+          <div class="col-sm-3">
+            <div class="card">
+              <div class="card-body" style="border-left: 4px solid #6ebee7; border-radius: 5px;">
+                <div class="detail">
+                  <p class="card-text">Earning</p>
+                  <p class="card-text total">$400,000</p>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-calendar"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card">
+              <div class="card-body" style="border-left: 4px solid #82e76e; border-radius: 5px;">
+                <div class="detail">
+                  <p class="card-text">Earning</p>
+                  <p class="card-text total">$800,000</p>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-dollar-sign"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card">
+              <div class="card-body" style="border-left: 4px solid #b16ee7; border-radius: 5px;">
+                <div class="detail">
+                  <p class="card-text">Task</p>
+                  <p class="card-text total">13</p>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-tasks"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card">
+              <div class="card-body" style="border-left: 4px solid #ffde4a; border-radius: 5px;">
+                <div class="detail">
+                  <p class="card-text">Request</p>
+                  <p class="card-text total">26</p>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-comments"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="overview">
+          
+          <div class="chart">
+            <div class="earnig-title">
+              Earnings Overview
+            </div>
+            <canvas id="myChart"></canvas>
+            <script>
+              var ctx = document.getElementById('myChart').getContext('2d');
+              var myChart = new Chart(ctx, {
+                  type: 'line', // Set the type to 'line' for a line chart
+                  data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: [{
+                      label: 'Monthly',
+                      data: [12, 19, 3, 5, 2, 3],
+                      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                      borderColor: 'rgba(255, 99, 132, 1)',
+                      borderWidth: 1,
+                    }]
+                  },
+                  options: {
+                    scales: {
+                      y: {
+                        beginAtZero: true
+                      }
+                    },
+                    elements: {
+                      line: {
+                        cubicInterpolationMode: 'monotone' // Use 'monotone' for spline interpolation
+                      }
+                    }
+                  }
+                });
+            </script>
+          </div>
+
+
+          <div class="task">
+            <div class="card" style="width: 18rem;">
+              <div class="card-header">
+                Tasks
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Borrowed Items</li>
+                <li class="list-group-item">Trello requests</li>
+                <li class="list-group-item">Marked Comments</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</body>
+</html>
